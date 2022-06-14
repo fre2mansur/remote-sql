@@ -1,0 +1,171 @@
+button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}
+button{overflow:visible}
+button,select{text-transform:none}
+button,input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;background-color:#ede6df;color:#987}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+input[type=checkbox],input[type=radio]{padding:0}
+input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}
+input[type=search]{-webkit-appearance:textfield}
+input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+
+button,input,select,textarea{box-sizing:border-box;height:30px;margin:0 1px 1px 0;max-width:100%;outline:none;padding:0 7px;vertical-align:middle}
+button,input,select{line-height:30px}
+@media screen and (-webkit-min-device-pixel-ratio:0){select{height:30px;line-height:30px;background:0 0}}/*safari and chrome*/
+@-moz-document url-prefix(){select{padding:2px 0}}/* targets Firefox only */
+button,input,textarea,select{border:solid 1px rgba(0,0,0,.1);border-radius:4px}
+input,textarea,select{background-color:#fff8f1;color:#a98}
+input[type=checkbox],input[type=radio]{width:auto;vertical-align:middle}
+input[type=submit],input[type=button],input[type=file]{width:auto}
+textarea,input,select{outline:none;width:100%}
+
+::-webkit-input-placeholder{opacity:.4}/* Chrome/Opera/Safari */
+::-moz-placeholder{opacity:.4}/* Firefox 19+ */
+:-ms-input-placeholder{opacity:.4}/* IE 10+ */
+:-moz-placeholder{opacity:.4}/* Firefox 18- */
+.placeholder{color:#dcd8d3}/* for select */
+.err::-webkit-input-placeholder{color:#c44}
+
+*{padding:0;margin:0}
+html,body{height:100%;overflow:hidden}
+body{background:#eed;color:#665;font-size:15px;font-family:sans-serif}
+.fullH{height:100%}
+.flex{display:flex;min-height:0;min-width:0;flex:1 1 auto;flex-flow:column}
+.tool{flex-shrink:0;padding:3px}
+.tool a,#menu a{color:#665}
+.tool a:hover{color:#221}
+#page{overflow:auto;flex-flow:row}
+#menu{display:block;background:#fff;overflow:auto;width:200px;flex-shrink:0;white-space:nowrap;padding:3px;border-top:solid 1px #cca;border-right:solid 1px #ddc;margin-right:3px}
+#menu b{color:#aaa;font-weight:400;font-size:.8em;font-style:italic}
+#menu a:hover,#menu a.on,.tool a.on,.err,.red{color:#c00}
+#menu b.load{background:url(load.gif) 5px no-repeat;display:block;height:16px}
+#colR{position:relative}
+#sqls{background:#fff;height:100px;flex-shrink:0}
+#menuDrag{position:absolute;left:-4px;top:0;bottom:0;width:8px;cursor:col-resize}
+#sqlsDrag{margin-bottom:-6px;height:6px;cursor:row-resize;flex-shrink:0;z-index:1}
+#colB{background:#fff;overflow:auto;padding:5px;flex:1 1 auto}
+#sqls,#colB{border-top:solid 1px #cca;border-left:solid 1px #cca}
+#sqlwait{position:absolute;background:url(loading.gif) center center no-repeat;width:100%;height:50px;margin-top:200px;z-index:2;display:none}
+@media screen and (max-width:602px){
+  #page{flex-flow:column;overflow:hidden;height:100%;max-height:100%}
+  #menu{width:auto !important;max-height:98%}
+  #menuDrag,#xsqlsDrag,#menu{display:none}
+}
+
+.icon i,i.icon{background:url(sidu-tool.png);width:18px;height:18px;display:inline-block;margin:1px;vertical-align:middle}
+i.i-sep{background-position:-23px 0;width:7px}
+i.i-drop{background-position:-40px 0}
+i.i-exit{background-position:-60px 0}
+i.i-web{background-position:-100px 0}
+i.i-sch{background-position:-40px -20px}
+i.i-zf,i.i-xf{background-position:-60px -20px}
+i.i-zS{background-position:-80px -20px}
+i.i-zr{background-position:-100px -20px}
+i.i-zv{background-position:-120px -20px}
+i.i-xS{background-position:-140px -20px}
+i.i-xr{background-position:-160px -20px}
+i.i-xv{background-position:-180px -20px}
+i.i-flus{background-position:0 -40px}
+i.i-fref{background-position:-20px -40px;cursor:pointer}
+i.i-conn{background-position:-40px -40px}
+i.i-db{background-position:-60px -40px}
+i.i-engmysql{background-position:-80px -40px}
+i.i-engpgsql{background-position:-100px -40px}
+i.i-engsqlite{background-position:-120px -40px}
+i.i-engcubrid{background-position:-160px -40px}
+i.i-time{background-position:-180px -40px}
+i.i-tr{background-position:0 -60px;cursor:pointer}
+i.i-trLast{background-position:-20px -60px}
+i.i-trOpen{background-position:-40px -60px;cursor:pointer}
+i.i-trOpen.i-trLast{background-position:-60px -60px}
+i.i-trLine{background-position:-80px -60px}
+i.i-trLineLast{background:none}
+i.i-trJoin{background-position:-100px -60px}
+i.i-trJoinLast{background-position:-120px -60px}
+i.i-sort1 {background-position:-139px -60px;width:10px;height:6px}
+i.i-sort1d{background-position:-139px -74px;width:10px;height:6px}
+i.i-sort2 {background-position:-149px -60px;width:10px;height:6px}
+i.i-sort2d{background-position:-149px -74px;width:10px;height:6px}
+i.i-folder{background-position:-160px -60px}
+i.i-folderOpen{background-position:-180px -60px}
+i.i-imp {background-position:0 -80px}
+i.i-mult{background-position:-20px -80px}
+i.i-chart{background-position:-40px -80px}
+i.i-temp{background-position:-60px -80px}
+i.i-opts{background-position:-80px -80px}
+i.i-hide{background-position:-100px -80px}
+i.i-user{background-position:-120px -80px}
+i.i-find{background-position:-140px -80px}
+i.i-close{background-position:-160px -80px}
+i.i-save{background-position:-180px -80px}
+i.i-arrHead{background-position:0 -100px}
+i.i-arrFoot{background-position:-20px -100px}
+i.i-runA{background-position:-60px -100px}
+i.i-exp {background-position:-100px -100px}
+i.i-arrFirst{background-position:-120px -100px}
+i.i-arrLast{background-position:-140px -100px}
+i.i-arrBack{background-position:-160px -100px}
+i.i-arrNext{background-position:-180px -100px}
+i.i-run {background-position:-20px -120px}
+i.i-plus{background-position:-40px -120px}
+i.i-info{background-position:-60px -120px}
+i.i-menu{background-position:-100px -120px}
+i.i-main{background-position:-120px -120px}
+i.i-grid{background-position:-180px -120px}
+.icon a{margin-right:2px;text-decoration:none}
+.icon .a{cursor:pointer;margin-right:2px}
+.icon .grey{opacity:.4}
+
+.grid{border:solid 1px #cca;white-space:nowrap;table-layout:fixed;border-spacing:1px}
+.grid .th td{background:#ddb;text-align:left;padding:1px;font-weight:bold;color:#333}
+.grid .th:hover td{background:#ddb}
+.grid .th td b{display:block;width:8px;float:right;height:19px;cursor:col-resize}
+.grid .th td div{overflow:hidden}
+.grid td{background:#eed;vertical-align:top;overflow-y:hidden;padding-right:3px}
+.grid tr:hover td,.grid tr:hover input{background:#cf9}
+.grid tr.on td,.grid tr.on input{background:#9ea}
+.grid tr td:first-child{background:#ddb !important;text-align:center !important;vertical-align:center !important;width:30px}
+.grid tr td:first-child input{width:15px}
+.grid input,.grid select{width:100%;padding:1px;height:21px;border-radius:0;background:#fff;margin:0;color:#777}
+.grid select.mult-sel:hover{position:absolute;height:200px;background:#ffc;overflow:auto;width:200px}
+.grid input:focus{background:#9c9}
+.grid a{color:#033;text-decoration:none}
+input.where{background:#cdb;color:#900}
+#colShow td{text-align:center}
+#colTtl td{text-align:right;font-size:.8em;color:#888;background:#cdb;overflow:hidden}
+.grid .newR input{background:#edd}
+.grid .null{font-style:italic;color:#bbb}
+.bg1,.grid input.bg1{background:#ddc}
+.grid .Hpop{cursor:pointer}
+.grid td textarea{position:fixed;top:29px;left:0;width:400px;height:200px;z-index:10;border:solid 5px #987}
+.grid tr:not(.th) td div{height:20px;width:95%;overflow:hidden;padding-right:3px}
+.grid tr td{position:relative}
+.grid td a.fk{position:absolute;top:0;left:0;background:green;opacity:.5}
+
+.show,.hand,.tree,.ajax,#txtRep u{cursor:pointer}
+.hide{display:none}
+.fr{float:right}
+.fl{float:left}
+.ac{text-align:center}
+.ar,.ar input{text-align:right}
+.blue{color:#06c}
+.green{color:#3b7}
+.grey{color:#aaa}
+.b{font-weight:bold}
+.small{font-size:.9em}
+.mr{margin-right:5px}
+a.none{text-decoration:none}
+.clear:after,.clear:before{content:'';clear:both;display:table}
+pre{font-family:'Droid Sans Mono',monospace;font-size:.8em}
+.box{border:solid 1px #ddc;background:#eed;padding:10px;border-radius:5px}
+p,.p,table{margin-bottom:15px}
+
+#pgFm,#pgSize{width:50px;padding:1px;height:21px}
+#objTool b,#colHide b{cursor:pointer;border:1px solid #cca;padding:5px;border-radius:3px;background:#eed;line-height:35px}
+
+.grid td::-webkit-scrollbar {
+  width: 0;/* Remove scrollbar space */
+}
+.grid td::-webkit-scrollbar-thumb {
+  background:#ccc;/*Optional show position indicator*/
+}
